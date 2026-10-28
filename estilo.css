@@ -1,0 +1,31 @@
+
+    p{color: blueviolet;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 80%;
+    border: 2px solid powderblue;
+    padding: 30px;}
+    
+    .paddingGrande{
+        color: violet;
+        padding: 30px;
+    }
+    .paddingPequeño{
+        color: orange;
+        padding: 3px;
+    }
+    .borderGrande {
+        border: 10px solid violet;
+    }
+
+    .borderPequeño {
+        border: 1px solid orange;
+    }
+
+    .borderMediano {
+        border: 5px solid rgb(255, 0, 0);
+    }
+    #titulo {
+        color: rgb(60, 255, 0);
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: x-large;
+    }

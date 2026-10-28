@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 400px;
+            margin: 20px auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select {
+            width: calc(100% - 12px); 
+            padding: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box; 
+        }
+        .radio-group, .checkbox-group {
+            margin-bottom: 10px;
+        }
+        .radio-group label, .checkbox-group label {
+            display: inline;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+        .radio-group span, .checkbox-group span{
+             display: block;
+             margin-bottom: 5px;
+             font-weight: bold;
+        }
+        hr {
+             border: 0;
+             border-top: 1px solid #ccc;
+             margin: 15px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e0e0e0;
+        }
+        
+        
+        .name-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .name-row .form-group {
+            width: 48%;
+        }
+         .contact-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .contact-row .form-group {
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Registration</h2>
+
+    <form action="#" method="post">
+        
+        <div class="name-row">
+            <div class="form-group">
+                <label for="nombre" class="visually-hidden">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellidos" class="visually-hidden">Apellidos</label>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+            </div>
+        </div>
+
+        
+        <div class="form-group">
+             <label for="dni" class="visually-hidden">DNI</label>
+             <input type="text" id="dni" name="dni" placeholder="DNI" required pattern="[0-9]{8}[A-Za-z]{1}">
+        </div>
+
+        <div class="contact-row">
+            <div class="form-group">
+                <label for="email" class="visually-hidden">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono" class="visually-hidden">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
+            </div>
+        </div>
+
+       
+        <div class="form-group">
+            <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ciclo_formativo">Ciclo formativo:</label>
+            <select id="ciclo_formativo" name="ciclo_formativo" required>
+                <option value="">Seleccione un ciclo...</option>
+                <option value="daw">Desarrollo de Aplicaciones Web (DAW)</option>
+                <option value="dam">Desarrollo de Aplicaciones Multiplataforma (DAM)</option>
+                <option value="asir">Administración de Sistemas Informáticos en Red (ASIR)</option>
+                <option value="smr">Sistemas Microinformáticos y Redes (SMR)</option>
+            </select>
+        </div>
+
+        <hr>
+
+        
+        <div class="radio-group">
+            <span>Gender</span>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+        </div>
+
+        <hr>
+
+        <div class="checkbox-group">
+            <span>Hobbies</span>
+            <input type="checkbox" id="cricket" name="hobbies" value="cricket">
+            <label for="cricket">Cricket</label><br>
+            <input type="checkbox" id="football" name="hobbies" value="football">
+            <label for="football">Football</label><br>
+            <input type="checkbox" id="chess" name="hobbies" value="chess">
+            <label for="chess">Chess</label>
+        </div>
+
+        <hr>
+
+        
+        <div class="radio-group">
+            <span>Turno preferido:</span>
+            <input type="radio" id="turno_manana" name="turno" value="manana" required>
+            <label for="turno_manana">Mañana</label><br>
+            <input type="radio" id="turno_tarde" name="turno" value="tarde">
+            <label for="turno_tarde">Tarde</label>
+        </div>
+
+        <div class="radio-group">
+             <span>Modalidad:</span>
+             <input type="radio" id="mod_presencial" name="modalidad" value="presencial" required>
+             <label for="mod_presencial">Presencial</label><br>
+             <input type="radio" id="mod_semipresencial" name="modalidad" value="semipresencial">
+             <label for="mod_semipresencial">Semipresencial</label><br>
+             <input type="radio" id="mod_online" name="modalidad" value="online">
+             <label for="mod_online">Online</label>
+        </div>
+
+        <hr>
+
+       
+        <div class="form-group">
+            <label for="password" class="visually-hidden">Password</label>
+            <input type="password" id="password" name="password" placeholder="••••••••••••••" style="width: calc(100% - 12px); padding: 6px; border: 1px solid #ccc; box-sizing: border-box;">
+        </div>
+
+        
+        <div class="form-group" style="margin-top: 15px;">
+            <input type="checkbox" id="privacidad" name="privacidad" required>
+            <label for="privacidad" style="display: inline;">Acepto la política de privacidad</label>
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+
+<style>
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+</style>
+
+</body>
+</html>

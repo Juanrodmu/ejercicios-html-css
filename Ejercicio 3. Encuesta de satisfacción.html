@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Satisfacción</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        
+        form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .inline-group label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 15px;
+        }
+        .inline-group span {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        button[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        
+        
+        .tabla-resumen {
+            width: 50%;
+            margin: 0 auto;
+        }
+        .tabla-resumen th, .tabla-resumen td {
+            text-align: center;
+        }
+
+        
+        .val-5 { color: #006400; font-weight: bold; } 
+        .val-4 { color: #228B22; font-weight: bold; } 
+        .val-3 { color: #DAA520; font-weight: bold; } 
+        .val-2 { color: #FF4500; font-weight: bold; } 
+        .val-1 { color: #FF0000; font-weight: bold; } 
+        
+       
+        .center-text {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Encuesta de Satisfacción</h1>
+
+    <form action="#" method="post">
+        
+        <div class="form-group">
+            <label for="nombre">Nombre del cliente (opcional):</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="servicio">Servicio utilizado:</label>
+            <select id="servicio" name="servicio" required>
+                <option value="">Seleccione una opción...</option>
+                <option value="reparacion">Reparación</option>
+                <option value="instalacion">Instalación</option>
+                <option value="mantenimiento">Mantenimiento</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="valoracion">Valoración general (1 a 5):</label>
+            <input type="number" id="valoracion" name="valoracion" min="1" max="5" required>
+        </div>
+
+       
+        <div class="form-group inline-group">
+            <span>Aspectos que más le han gustado:</span>
+            <input type="checkbox" id="asp_atencion" name="aspectos" value="atencion">
+            <label for="asp_atencion">Atención</label>
+            
+            <input type="checkbox" id="asp_rapidez" name="aspectos" value="rapidez">
+            <label for="asp_rapidez">Rapidez</label>
+            
+            <input type="checkbox" id="asp_precio" name="aspectos" value="precio">
+            <label for="asp_precio">Precio</label>
+            
+            <input type="checkbox" id="asp_calidad" name="aspectos" value="calidad">
+            <label for="asp_calidad">Calidad</label>
+        </div>
+
+        
+        <div class="form-group inline-group">
+            <span>¿Recomendaría el servicio?</span>
+            <input type="radio" id="recomienda_si" name="recomienda" value="si" required>
+            <label for="recomienda_si">Sí</label>
+            
+            <input type="radio" id="recomienda_no" name="recomienda" value="no">
+            <label for="recomienda_no">No</label>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="comentarios">Comentarios:</label>
+            <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe aquí tus comentarios..."></textarea>
+        </div>
+
+        <button type="submit">Enviar Encuesta</button>
+
+    </form>
+
+    <h2>Resultados de Encuestas</h2>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Servicio</th>
+                <th>Valoración</th>
+                <th>Recomienda</th>
+                <th>Comentarios</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ana</td>
+                <td>Reparación</td>
+                <td class="center-text val-5">5</td>
+                <td class="center-text">Sí</td>
+                <td>Muy buen servicio</td>
+            </tr>
+            <tr>
+                <td>Pedro</td>
+                <td>Instalación</td>
+                <td class="center-text val-4">4</td>
+                <td class="center-text">Sí</td>
+                <td>Rápido y eficaz</td>
+            </tr>
+            <tr>
+                <td>Lucía</td>
+                <td>Reparación</td>
+                <td class="center-text val-3">3</td>
+                <td class="center-text">No</td>
+                <td>Tardaron demasiado</td>
+            </tr>
+            <tr>
+                <td>Carlos</td>
+                <td>Mantenimiento</td>
+                <td class="center-text val-5">5</td>
+                <td class="center-text">Sí</td>
+                <td>Excelente atención</td>
+            </tr>
+            <tr>
+                <td>Elena</td>
+                <td>Instalación</td>
+                <td class="center-text val-2">2</td>
+                <td class="center-text">No</td>
+                <td>Precio elevado</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <h2>Resumen de Valoraciones</h2>
+    <table class="tabla-resumen">
+        <thead>
+            <tr>
+                <th>Puntuación</th>
+                <th>Número de Clientes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="val-5">5</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td class="val-4">4</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td class="val-3">3</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td class="val-2">2</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td class="val-1">1</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
